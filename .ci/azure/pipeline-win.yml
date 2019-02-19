@@ -29,7 +29,7 @@ jobs:
         conda install pyevtk gmsh
         REM these are build/test-time deps for the conda package, not runtime
         conda install cython pytest pytest-cov curl
-        pip install pytest-azurepipelines
+        pip install pytest-azurepipelines pytest-mp
         curl https://pymor.github.io/dist/opengl32.dll.7z -o D:\opengl32.dll.7z
     displayName: Install Anaconda packages
   - task: ExtractFiles@1
@@ -50,6 +50,6 @@ jobs:
         REM set PYTHONPATH=%cd%\src;%PYTHONPATH%;
         python setup.py build_ext -i
 
-        py.test -r sxX -k "thermalblock_adaptive or (not demos and not pickle)" 
+        py.test -r sxX --mp --np 2
     displayName: 'Tests'
 
