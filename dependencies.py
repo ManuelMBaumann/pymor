@@ -15,7 +15,7 @@ def _pymess(rev, major, minor, marker=True):
     return url
 
 tests_require = [_PYTEST, 'pytest-cov', 'envparse', 'docker']
-install_requires = ['numpy>=1.8.1', 'scipy>=0.13.3', 'Qt.py', 'packaging', 'Sphinx>=1.4.0',]
+install_requires = ['numpy>=1.8.1', 'scipy>=0.13.3', 'Qt.py', 'packaging', 'Sphinx>=1.4.0']
 setup_requires = ['setuptools>=40.8.0', 'wheel', 'pytest-runner>=2.9', 'cython>=0.20.1', 'numpy>=1.8.1', 'packaging',]
 install_suggests = {'ipython>=3.0': 'an enhanced interactive python shell',
                     'ipyparallel': 'required for pymor.parallel.ipython',
@@ -25,6 +25,8 @@ install_suggests = {'ipython>=3.0': 'an enhanced interactive python shell',
                     'pyevtk>=1.1': 'writing vtk output',
                     _PYTEST: 'testing framework required to execute unit tests',
                     'PyQt5': 'solution visualization for builtin discretizations',
+                    'k3d': 'in-notebook visualizations of 3D data',
+                    'vtk': 'KitWares python bindings for vtk',
                     'pillow': 'image library used for bitmap data functions'}
 doc_requires = ['sphinx>=1.5', 'cython', 'numpy']
 travis_requires = ['pytest-cov', 'pytest-xdist', 'check-manifest', 'python-coveralls', 'pytest-travis-fold',
